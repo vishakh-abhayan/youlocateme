@@ -1,0 +1,6 @@
+node_modules
+Ds_store
+.DS_Store
+.env
+.env.example
+.env.production
