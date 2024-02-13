@@ -1,4 +1,6 @@
-export const generateLocationId = async (homeName) => {
+const User = require("../models/User");
+
+const generateLocationId = async (homeName) => {
   let unique = false;
   let locationId = "";
   while (!unique) {
@@ -11,3 +13,5 @@ export const generateLocationId = async (homeName) => {
   }
   return locationId;
 };
+
+module.exports = { generateLocationId };
