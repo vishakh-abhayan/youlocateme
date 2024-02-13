@@ -8,10 +8,10 @@ const { generateLocationId } = require("../utils/generateLocationId");
 // Registration endpoint
 router.post("/register", async (req, res) => {
   try {
-    const { email, homeName, billingAddress } = req.body;
+    const { homeName, billingAddress } = req.body;
     const locationId = await generateLocationId(homeName); // Generate a unique location ID based on home name
 
-    const newUser = new User({ email, locationId, billingAddress });
+    const newUser = new User({ locationId, billingAddress });
     await newUser.save();
 
     res.status(201).json({ locationId });
