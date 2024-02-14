@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
   locationId: { type: String, required: true, unique: true },
+  cordinates: {
+    type: { type: String },
+    coordinates: { type: [Number] },
+    required: false,
+  },
   billingAddress: {
     street: { type: String, required: true },
     city: { type: String, required: true },
