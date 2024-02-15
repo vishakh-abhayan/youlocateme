@@ -5,12 +5,12 @@ const UserSchema = new mongoose.Schema({
   coordinates: {
     type: {
       type: String,
-      enum: ["Point"], // 'location.type' must be 'Point'
-      required: true,
+      enum: ["Point"],
+      required: false, // Ensure this is set to false or omitted if not required
     },
     coordinates: {
       type: [Number],
-      required: true,
+      required: false, // Ensure this is set to false or omitted if not required
     },
   },
   billingAddress: {
@@ -21,7 +21,6 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-// Ensure the schema uses the GeoJSON format for spatial queries.
-UserSchema.index({ coordinates: "2dsphere" });
+UserSchema.index({ coordinates: "2dsphere" }); // This can remain if you want to support spatial queries when coordinates are provided
 
 module.exports = mongoose.model("User", UserSchema);
