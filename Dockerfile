@@ -10,11 +10,15 @@ COPY package.json package-lock.json ./
 # Install dependencies
 RUN npm install
 
+
+
 # Bundle your app's source code inside the Docker image
 COPY . .
+
+RUN npm i -g pm2
 
 # Make port 4000 available to the world outside this container
 EXPOSE 4000
 
 # Define the command to run your app
-CMD [ "node", "app.js" ]
+CMD [ "pm2-runtime", "ecosystem.config.js" ]
