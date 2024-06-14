@@ -5,11 +5,11 @@
 - build Container
 
 ```shell
-docker-compose build
+    docker-compose build
 ```
 
 - Run Container
 
 ```shell
-docker-compose up
+    docker-compose up
 ```
