@@ -34,4 +34,8 @@ router.get("/address/:locationId", async (req, res) => {
   }
 });
 
+router.get("/status", (req, res) => {
+  res.send("API is running");
+});
+
 module.exports = router;
