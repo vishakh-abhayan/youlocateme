@@ -4,3 +4,4 @@ Ds_store
 .env
 .env.example
 .env.production
+logs

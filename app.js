@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const apiRoutes = require("./routes/api");
 const cors = require("cors");
 require("dotenv").config();
+const logger = require("./utils/logger");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -14,9 +15,9 @@ app.use(express.json());
 
 mongoose
   .connect(MONGODB_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.error(err));
+  .then(() => logger.info("MongoDB connected port 27017!"))
+  .catch((err) => logger.warn(err.message));
 
-app.use("/api", apiRoutes);
+app.use("/api/v1", apiRoutes);
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => logger.info(`Server running on port ${PORT}`));
