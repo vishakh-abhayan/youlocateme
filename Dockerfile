@@ -15,6 +15,8 @@ RUN npm install
 # Bundle your app's source code inside the Docker image
 COPY . .
 
+# COPY docker-compose.yml /usr/src/app/docker-compose.yml
+
 RUN npm i -g pm2
 
 # Make port 4000 available to the world outside this container
