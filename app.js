@@ -13,6 +13,7 @@ const MONGODB_URI =
 app.use(cors());
 app.use(express.json());
 
+logger.info("Connecting to MongoDB at " + MONGODB_URI);
 mongoose
   .connect(MONGODB_URI)
   .then(() => logger.info("MongoDB connected port 27017!"))
