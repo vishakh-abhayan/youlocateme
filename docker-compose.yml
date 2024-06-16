@@ -6,7 +6,7 @@ services:
     ports:
       - "4000:4000"
     environment:
-      - MONGODB_URI=mongodb://0.0.0.0:27017/youlocateme
+      - mongodb://mongo:27017/youlocateme
     depends_on:
       - mongo
 

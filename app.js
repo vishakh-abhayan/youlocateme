@@ -8,7 +8,7 @@ const logger = require("./utils/logger");
 const app = express();
 const PORT = process.env.PORT || 4000;
 const MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://0.0.0.0:27017/youlocateme";
+  process.env.MONGODB_URI || "mongodb://mongo:27017/youlocateme";
 
 app.use(cors());
 app.use(express.json());
