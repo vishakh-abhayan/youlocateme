@@ -11,8 +11,8 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Pull Docker Image
-        run: sudo docker pull vishakh007/youlocateme:latest
+        run: sudo docker-compose pull vishakh007/youlocateme:latest
       - name: Delete old Docker container
-        run: sudo docker rm -f youlocateme-container || true
+        run: sudo docker-compose down || true
       - name: Create new Docker container
-        run: sudo docker run -d -p 4000:4000 --name youlocateme-container vishakh007/youlocateme:latest
+        run: sudo docker-compose up -d
